@@ -16,18 +16,27 @@ export default {
     return {
       option: {
         lineHeight: 25,
-        column: [
-          { label: 'labelName', prop: 'propName' },
-          { label: 'labelName', prop: 'propName' },
-          { label: 'labelName', prop: 'propName' }
-        ]
+        hasIndex: true,
+        height: 500,
+        headerCellStyle: { height: '30px', padding:0 },
+        cellStyle: { padding:0 },
+        rowStyle: { padding:0, height: '18px' },
+        columns: [
+          { label: 'labelName', prop: 'propName', align: 'center', 'header-align': 'center', 'show-overflow-tooltip': true },
+          { label: 'labelName', prop: 'propName', align: 'center', 'header-align': 'center', 'show-overflow-tooltip': true },
+          { label: 'labelName', prop: 'propName', align: 'center', 'header-align': 'center', 'show-overflow-tooltip': true },
+          { label: 'labelName', prop: 'propName', align: 'center', 'header-align': 'center', 'show-overflow-tooltip': true }
+        ],
+        tableRowClick(data, row, event) {
+          console.log(data, row, event)
+        }
       },
       dlist: []
     }
   },
   created() {
-    for (let i = 0; i < 200; i++) {
-      this.dlist.push({ labelName: 'TEST_LABEL_' + i, propName: 'TEST_VALUE'})
+    for (let i = 0; i < 190; i++) {
+      this.dlist.push({ propName: 'TEST_VALUE' + i})
     }
   },
   methods: {
