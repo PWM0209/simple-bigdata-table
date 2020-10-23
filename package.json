@@ -1,7 +1,7 @@
 {
   "name": "simple-bigdata-table",
   "main": "dist/sbdTable.umd.min.js",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
