@@ -1,17 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <sbgTable :data="dlist" :option="option"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import sbgTable from './components/sbgTable.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    sbgTable
+  },
+  data() {
+    return {
+      option: {
+        lineHeight: 25,
+        column: [
+          { label: 'labelName', prop: 'propName' },
+          { label: 'labelName', prop: 'propName' },
+          { label: 'labelName', prop: 'propName' }
+        ]
+      },
+      dlist: []
+    }
+  },
+  created() {
+    for (let i = 0; i < 200; i++) {
+      this.dlist.push({ labelName: 'TEST_LABEL_' + i, propName: 'TEST_VALUE'})
+    }
+  },
+  methods: {
+
   }
 }
 </script>
@@ -23,6 +43,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
